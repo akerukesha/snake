@@ -34,7 +34,7 @@ namespace snake.Models
             {
                 body[0].x = 47;
             }
-            else if (body[0].x == 47)
+            else if (body[0].x > 47)
             {
                 body[0].x = 0;
             }
@@ -42,7 +42,7 @@ namespace snake.Models
             {
                 body[0].y = 47;
             }
-            else if (body[0].y == 47)
+            else if (body[0].y > 47)
             {
                 body[0].y = 0;
             }
