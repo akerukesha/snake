@@ -12,7 +12,7 @@ namespace snake.Models
     class Drawer
     {   
         /// <summary>
-        /// создаются методы для постановки символов, сериализации и десериализации файлов через BinaryFormatter
+        /// создаются методы для постановки символов, сериализации и десериализации файлов через BinaryFormatter   
         /// </summary>
         public List<Point> body = new List<Point>();
         public ConsoleColor color;
