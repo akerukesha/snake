@@ -62,7 +62,7 @@ namespace snake
             Console.Clear();
             Console.SetCursorPosition(20, 10);
             Console.WriteLine("Conratulations! You won!");
-            Console.SetCursorPosition(21, 10);
+            Console.SetCursorPosition(20, 11);
             Console.WriteLine("Your score is " + gainedPoints);
             Game.isActive = false;
         }

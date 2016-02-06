@@ -35,6 +35,8 @@ namespace snake.Models
                 Console.SetCursorPosition(20, 10);
                 Console.WriteLine("Game over!");
                 Game.isActive = false;
+                Program.level = 1;
+                Program.gainedPoints = 0;
             }
 
             if (Game.snake.body[0].x == Game.food.body[0].x && Game.snake.body[0].y == Game.food.body[0].y)
@@ -61,6 +63,8 @@ namespace snake.Models
                     Console.SetCursorPosition(20, 10);
                     Console.WriteLine("Game over!");
                     Game.isActive = false;
+                    Program.level = 1;
+                    Program.gainedPoints = 0;
                 }
             }
         }
