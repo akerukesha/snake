@@ -17,10 +17,6 @@ namespace snake.Models
         public List<Point> body = new List<Point>();
         public ConsoleColor color;
         public char sign;
-        public Drawer()
-        {
-            color = ConsoleColor.Blue;
-        }
 
         public void Draw()
         {
