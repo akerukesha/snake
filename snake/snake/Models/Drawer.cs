@@ -10,7 +10,10 @@ using System.Xml.Serialization;
 namespace snake.Models
 {   [Serializable]
     class Drawer
-    {
+    {   
+        /// <summary>
+        /// создаются методы для постановки символов, сериализации и десериализации файлов через BinaryFormatter
+        /// </summary>
         public List<Point> body = new List<Point>();
         public ConsoleColor color;
         public char sign;

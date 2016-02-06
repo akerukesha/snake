@@ -9,12 +9,17 @@ using System.Threading.Tasks;
 namespace snake
 {
     class Program
-    {
+    {   
+        /// <summary>
+        /// создаются 2 счетчика: для левела и набранных очков
+        /// левелы прогружаются, пока не достигнут конца
+        /// когда кончаются левелы, выходит сообщение о выигрыше
+        /// </summary>
         public static int level = 1;
         public static int gainedPoints = 0;
 
         static void Main(string[] args)
-        {
+        {   
             while (level <= Directory.GetFiles(@"C:\snake\snake\snake\Levels").Length)
             {
                 Game.Init();
@@ -57,6 +62,7 @@ namespace snake
             Console.Clear();
             Console.SetCursorPosition(20, 10);
             Console.WriteLine("Conratulations! You won!");
+            Console.SetCursorPosition(21, 10);
             Console.WriteLine("Your score is " + gainedPoints);
             Game.isActive = false;
         }

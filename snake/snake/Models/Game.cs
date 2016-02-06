@@ -9,6 +9,12 @@ namespace snake.Models
 {   [Serializable]
     class Game
     {
+        /// <summary>
+        /// при инициализации начинается игра, т.к. isActive = true и соответствующие координаты окрашиваются в нужный цвет
+        /// при прогрузке левела данные считываются с txt файла построчно и добавляются барьеры
+        /// создаются методы для сохранения игры, прогрузки сохраненной игры, рисовки точек при каждом нажатии клавиши
+        /// создается доп. метод для генерирования змейки в рандомном безопасном месте при прогрузке нового левела
+        /// </summary>
         public static bool isActive;
         public static Snake snake;
         public static Food food;
@@ -20,7 +26,6 @@ namespace snake.Models
             snake = new Snake();
             food = new Food();
             wall = new Wall();
-
 
             snake.body.Add(new Point { x = 20, y = 20 });
             food.body.Add(new Point { x = 10, y = 20 });

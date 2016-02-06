@@ -8,7 +8,6 @@ namespace snake.Models
 {   [Serializable]
     class Food:Drawer
     {
-        public int MyProperty { get; set; }
         public Food()
         {
             sign = '$';
