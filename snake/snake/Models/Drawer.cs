@@ -20,9 +20,16 @@ namespace snake.Models
 
         public void Draw()
         {
-            Console.ForegroundColor = color;
             foreach (Point p in body)
             {
+                if (p.x == Game.snake.body[0].x && p.y == Game.snake.body[0].y)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else
+                {
+                    Console.ForegroundColor = color;
+                }
                 Console.SetCursorPosition(p.x, p.y);
                 Console.Write(sign);
             }

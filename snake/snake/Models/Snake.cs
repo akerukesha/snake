@@ -29,7 +29,25 @@ namespace snake.Models
             body[0].x = body[0].x + dx;
             body[0].y = body[0].y + dy;
 
-            if (Game.snake.body[0].x == 0 || Game.snake.body[0].x == 47 || Game.snake.body[0].y == 0 || Game.snake.body[0].y == 47)
+            //за пределы рамки - с другой стороны
+            if (body[0].x < 0)
+            {
+                body[0].x = 47;
+            }
+            else if (body[0].x == 47)
+            {
+                body[0].x = 0;
+            }
+            if (body[0].y < 0)
+            {
+                body[0].y = 47;
+            }
+            else if (body[0].y == 47)
+            {
+                body[0].y = 0;
+            }
+            //за пределы рамки - game over
+            /*if (Game.snake.body[0].x == 0 || Game.snake.body[0].x == 47 || Game.snake.body[0].y == 0 || Game.snake.body[0].y == 47)
             {
                 Console.Clear();
                 Console.SetCursorPosition(20, 10);
@@ -37,7 +55,7 @@ namespace snake.Models
                 Game.isActive = false;
                 Program.level = 1;
                 Program.gainedPoints = 0;
-            }
+            }*/
 
             if (Game.snake.body[0].x == Game.food.body[0].x && Game.snake.body[0].y == Game.food.body[0].y)
             {
