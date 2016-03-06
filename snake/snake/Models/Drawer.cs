@@ -34,6 +34,15 @@ namespace snake.Models
                 Console.Write(sign);
             }
         }
+        public void Erase()
+        {
+            foreach (Point p in body)
+            {
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.SetCursorPosition(p.x, p.y);
+                Console.Write("-");
+            }
+        }
 
         public void Save()
         {

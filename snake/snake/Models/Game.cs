@@ -39,6 +39,16 @@ namespace snake.Models
 
         public static void LoadlLevel(int level)
         {
+            if (Program.level > Directory.GetFiles(@"C:\snake\snake\snake\Levels").Length)
+            {
+                Console.Clear();
+                Console.SetCursorPosition(20, 10);
+                Console.WriteLine("Conratulations! You won!");
+                Console.SetCursorPosition(20, 11);
+                Console.WriteLine("Your score is " + Program.gainedPoints);
+                Game.isActive = false;
+                return;
+            }
             FileStream fs = new FileStream(string.Format(@"C:\snake\snake\snake\Levels\Level{0}.txt", level), FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
 
@@ -59,9 +69,14 @@ namespace snake.Models
                     }
                 }
             }
-
+            
             sr.Close();
             fs.Close();
+
+            Console.Clear();
+
+            wall.Draw();
+
         }
 
         public static void Save()
@@ -80,14 +95,15 @@ namespace snake.Models
 
         public static void Draw()
         {
-            Console.Clear();
+
             snake.Draw();
             food.Draw();
-            wall.Draw();
             Console.SetCursorPosition(3, 48);
             Console.WriteLine("Level: " + Program.level);
             Console.SetCursorPosition(3, 49);
             Console.WriteLine("Points: " + Program.gainedPoints);
+            Console.SetCursorPosition(3, 50);
+            Console.WriteLine("Time: " + Program.minute + " : " + Program.second);
         }
 
         public static void RandomSnake()
@@ -107,5 +123,6 @@ namespace snake.Models
                 }
             }
         }
+
     }
 }

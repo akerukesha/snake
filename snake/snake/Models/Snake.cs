@@ -77,12 +77,15 @@ namespace snake.Models
             {
                 if (Game.snake.body[0].x == Game.wall.body[i].x && Game.snake.body[0].y == Game.wall.body[i].y)
                 {
-                    Console.Clear();
+                    //Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.SetCursorPosition(20, 10);
                     Console.WriteLine("Game over!");
                     Game.isActive = false;
                     Program.level = 1;
                     Program.gainedPoints = 0;
+                    Program.second = 0;
+                    Program.minute = 0;
                 }
             }
         }
